@@ -1,2 +1,2 @@
-# nao-podia-perder-a-chance-kkkkkkkkkkkk
-kkkkkkkkkkkkkkkkkkkkkkkkkkkj
+# Svelte Training
+to train my skills with Svelte KIT
