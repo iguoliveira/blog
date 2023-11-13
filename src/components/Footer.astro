@@ -1,3 +1,11 @@
-<footer class="w-full py-5">
-    <div>github</div>
+---
+const socials: { name: string; link: string; icon: string }[] = [
+  { name: "Github", link: "https://github.com/iguoliveira", icon: ""},
+];
+---
+
+<footer class="w-full py-5 flex items-center justify-center">
+    {socials.map((media) => (
+        <a href={media.link} target="_blank">{media.name}</a>
+    ))}
 </footer>
