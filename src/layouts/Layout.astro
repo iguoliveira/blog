@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -22,5 +23,17 @@ const { title } = Astro.props;
   <body class="bg-theme text-white mx-96">
     <Navbar />
     <slot />
+    <Footer />
   </body>
 </html>
+
+<style is:global>
+  .fullScreen {
+    height: -moz-calc(100vh - 160px); /* Firefox */
+    height: -webkit-calc(100vh - 160px); /* Chrome, Safari */
+    height: calc(100vh - 160px); /* IE9+ and future browsers */
+    width: -moz-calc(100vw - 768);
+    width: -webkit-calc(100vw - 768);
+    width: calc(100vw - 768);
+  }
+</style>
