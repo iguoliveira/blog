@@ -1,11 +1,24 @@
 ---
 const socials: { name: string; link: string; icon: string }[] = [
-  { name: "Github", link: "https://github.com/iguoliveira", icon: ""},
+  {
+    name: "Github",
+    link: "https://github.com/iguoliveira",
+    icon: "github-icon.svg",
+  },
+  {
+    name: "Linkedin",
+    link: "https://www.linkedin.com/in/iguoliveira/",
+    icon: "linkedin-icon.svg",
+  },
 ];
 ---
 
-<footer class="w-full py-5 flex items-center justify-center">
-    {socials.map((media) => (
-        <a href={media.link} target="_blank">{media.name}</a>
-    ))}
+<footer class="w-full py-5 flex items-center justify-center space-x-1">
+  {
+    socials.map((media) => (
+      <a href={media.link} target="_blank">
+        <img src={media.icon} />
+      </a>
+    ))
+  }
 </footer>
