@@ -1,0 +1,58 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-theme text-white mx-96">
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  .fullScreen {
+    height: -moz-calc(100vh - 146px); /* Firefox */
+    height: -webkit-calc(100vh - 146px); /* Chrome, Safari */
+    height: calc(100vh - 146px); /* IE9+ and future browsers */
+    width: -moz-calc(100vw - 768);
+    width: -webkit-calc(100vw - 768);
+    width: calc(100vw - 768);
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #ed5ab3;
+    }
+  }
+</style>

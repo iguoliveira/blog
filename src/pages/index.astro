@@ -1,16 +1,35 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Cat from "../components/Cat.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class="bg-black text-white">Astro</h1>
-	</body>
-</html>
+<Layout title="Welcome">
+  <main class="fullScreen flex flex-col justify-center">
+    <div class="flex flex-col items-center">
+      <Cat />
+      <div class="typewriter">
+        <h1
+          class="font-bold text-6xl overflow-hidden border-r-[20px] whitespace-nowrap m-auto tracking-wide h-20"
+        >
+          Igor Oliveira Rodrigues
+        </h1>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="font-semibold opacity-50 text-2xl border-r-4 pr-3"
+          >Fullstack Web Developer</span
+        >
+        <span class="font-semibold opacity-50 text-2xl"
+          >PC Master Race</span
+        >
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .typewriter h1 {
+    animation:
+      typing 1.5s steps(30, end),
+      blink-caret 1s ease infinite;
+  }
+</style>

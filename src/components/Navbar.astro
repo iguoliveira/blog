@@ -1,0 +1,25 @@
+---
+import Logo from "./Logo.astro";
+
+const links: { title: string; route: string }[] = [
+  { title: "Articles", route: "/articles" },
+  { title: "Projects", route: "/projects" },
+  { title: "Setup", route: "/setup" },
+];
+---
+
+<nav class="flex items-center justify-between py-5">
+  <Logo />
+  <div class="flex space-x-10">
+    {
+      links.map((link) => (
+        <a
+          href={link.route}
+          class="text-lg font-bold lowercase hover:opacity-70 opacity-50"
+        >
+          {link.title}
+        </a>
+      ))
+    }
+  </div>
+</nav>

@@ -1,0 +1,40 @@
+<div class="relative">
+  <img src={"cat.svg"} />
+  <div
+    class="bg-white rounded-2xl w-8 h-10 absolute top-40 left-[100px] left-eye"
+  >
+  </div>
+  <div
+    class="bg-white rounded-2xl w-8 h-10 absolute top-40 right-[100px] right-eye"
+  >
+  </div>
+</div>
+
+<style>
+  .left-eye {
+    animation: blink 5s infinite forwards;
+  }
+
+  .right-eye {
+    animation: blink 5s infinite forwards;
+  }
+
+  @keyframes blink {
+    0% {
+      top: 160px;
+      height: 40px;
+    }
+    40% {
+      top: 160px;
+      height: 40px;
+    }
+    50% {
+      top: 180px;
+      height: 8px;
+    }
+    60% {
+      top: 160px;
+      height: 40px;
+    }
+  }
+</style>
