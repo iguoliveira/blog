@@ -14,41 +14,40 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <Head title={title} description={"Personal website"}/>
+    <Head title={title} description={"Personal website"} />
   </head>
   <body class="bg-theme text-white mx-96">
+    <ViewTransitions />
     <Navbar />
     <slot />
     <Footer />
-  </body>
+  </body><style is:global>
+    .fullScreen {
+      height: -moz-calc(100vh - 146px); /* Firefox */
+      height: -webkit-calc(100vh - 146px); /* Chrome, Safari */
+      height: calc(100vh - 146px); /* IE9+ and future browsers */
+      width: -moz-calc(100vw - 768);
+      width: -webkit-calc(100vw - 768);
+      width: calc(100vw - 768);
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink-caret {
+      from,
+      to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #ed5ab3;
+      }
+    }
+  </style>
 </html>
-
-<style is:global>
-  .fullScreen {
-    height: -moz-calc(100vh - 146px); /* Firefox */
-    height: -webkit-calc(100vh - 146px); /* Chrome, Safari */
-    height: calc(100vh - 146px); /* IE9+ and future browsers */
-    width: -moz-calc(100vw - 768);
-    width: -webkit-calc(100vw - 768);
-    width: calc(100vw - 768);
-  }
-
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: #ed5ab3;
-    }
-  }
-</style>
