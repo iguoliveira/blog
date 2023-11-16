@@ -8,6 +8,16 @@ const posts = await getCollection("blog");
 
 <Layout title="My posts">
   <section class="fullScreen">
-    {posts.map((post) => <PostCard {...post.data} slug={post.slug} />)}
+    <div
+      class="h-full w-full overflow-y-auto flex flex-col space-y-10 items-center justify-center"
+    >
+      {
+        posts.map((post) => (
+          <div class="w-1/2 h-1/2">
+            <PostCard {...post.data} slug={post.slug} />
+          </div>
+        ))
+      }
+    </div>
   </section>
 </Layout>
