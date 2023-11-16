@@ -1,9 +1,13 @@
 ---
-const { title, description } = Astro.props
+import type { CollectionEntry } from "astro:content";
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, slug } = Astro.props;
 ---
-<a href={"/post"}>
-    <div>
-        <h2>{title}</h2>
-        <p>{description}</p>
-    </div>
+
+<a href={`/blog/${slug}`}>
+  <div>
+    <h2>{title}</h2>
+    <p>{description}</p>
+  </div>
 </a>

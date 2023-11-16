@@ -1,15 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import PostCard from "../../components/PostCard.astro"
+import PostCard from "../../components/PostCard.astro";
 
-const posts = (await getCollection("blog"))
+const posts = await getCollection("blog");
 ---
 
 <Layout title="My posts">
   <section class="fullScreen">
-    {posts.map((post) => (
-      <PostCard title={post.data.title} description={post.data.description} />
-    ))}
+    {posts.map((post) => <PostCard {...post.data} slug={post.slug} />)}
   </section>
 </Layout>
