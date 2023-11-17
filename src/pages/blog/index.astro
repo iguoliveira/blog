@@ -7,13 +7,13 @@ const posts = await getCollection("blog");
 ---
 
 <Layout title="My posts">
-  <section class="fullScreen">
+  <section class="fullScreen flex justify-center items-center">
     <div
-      class="h-full w-full overflow-y-auto flex flex-col space-y-10 items-center justify-center"
+      class="h-3/4 w-full overflow-y-auto flex flex-col space-y-10 items-center px-5"
     >
       {
         posts.map((post) => (
-          <div class="w-1/2 h-1/2">
+          <div class="w-3/4 h-3/4">
             <PostCard {...post.data} slug={post.slug} />
           </div>
         ))

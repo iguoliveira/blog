@@ -32,6 +32,28 @@ const { title } = Astro.props;
         width: calc(100vw - 768);
       }
 
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 8px;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #ed5ab3;
+        border-radius: 8px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #988bc7;
+      }
+
       @keyframes typing {
         from {
           width: 0;
