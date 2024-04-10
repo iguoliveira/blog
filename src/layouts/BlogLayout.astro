@@ -1,0 +1,27 @@
+---
+import "../main.css";
+import { ViewTransitions } from "astro:transitions";
+import type { CollectionEntry } from "astro:content";
+import Head from "../components/Head.astro";
+import Navbar from "../components/Navbar.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Head title={title} description={description} />
+  </head>
+  <body class="bg-theme text-white mx-96">
+    <ViewTransitions />
+    <Navbar />
+    <article>
+      <h1 class="title">{title}</h1>
+      <hr />
+      <slot />
+    </article>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from "astro:content";
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, image, slug } = Astro.props;
+---
+
+<a href={`/blog/${slug}`} class="w-full h-full rounded">
+  <div class="h-full w-full">
+    <img src={image} class="w-full h-3/4 rounded-t-lg" />
+    <div
+      class="w-full flex flex-col border-2 border-gray-700 h-1/4 rounded-b-lg"
+    >
+      <h1
+        class="font-extrabold uppercase gradient-in-text text-xl p-2 border-b border-gray-700"
+      >
+        {title}
+      </h1>
+      <p class="opacity-80 px-2 py-5">{description}</p>
+    </div>
+  </div>
+</a>

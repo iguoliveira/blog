@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+
+const posts = await getCollection("blog");
+---
+
+<Layout title="My posts">
+  <section class="fullScreen flex justify-center items-center py-10">
+    <div
+      class="h-3/4 w-full overflow-y-auto flex flex-col space-y-10 items-center px-5"
+    >
+      {
+        posts.map((post) => (
+          <div class="w-3/4 h-3/4">
+            <PostCard {...post.data} slug={post.slug} />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
